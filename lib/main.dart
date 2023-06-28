@@ -17,7 +17,10 @@ class MovieApp extends StatelessWidget {
       designSize: const Size(428, 926),
       minTextAdapt: true,
       builder: (context, child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: MovieTheme.lightMode,
+        darkTheme: MovieTheme.darkMode,
+        themeMode: ThemeMode.system,
         home: const HomeScreen(),
       ),
     );

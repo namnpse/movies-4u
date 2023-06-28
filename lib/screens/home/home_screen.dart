@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/movie_card_item_w.dart';
 import 'widgets/movie_list_tile_w.dart';
+import 'widgets/movie_list_w.dart';
 import 'widgets/top_header_w.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -16,38 +16,15 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     return Scaffold(
-      body: SafeArea(
-        child: CustomScrollView(
-          shrinkWrap: true,
-          slivers: [
-            TopHeader(theme: theme),
-            MovieListTitle(theme: theme, title: 'Top 10 Movies This Week'),
-            SliverToBoxAdapter(
-              child: SizedBox(
-                height: 200,
-                child: ListView.builder(
-                  itemCount: 8,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) =>
-                      MovieCardItem(itemIndex: index),
-                ),
-              ),
-            ),
-            MovieListTitle(theme: theme, title: 'New Releases'),
-            SliverToBoxAdapter(
-              child: SizedBox(
-                height: 200,
-                child: ListView.builder(
-                  itemCount: 8,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) =>
-                      MovieCardItem(itemIndex: index),
-                ),
-              ),
-            ),
-            const SliverPadding(padding:  EdgeInsets.only(top: 24)),
-          ],
-        ),
+      body: CustomScrollView(
+        slivers: [
+          TopHeader(theme: theme),
+          MovieListTitle(theme: theme, title: 'Top 10 Movies This Week'),
+          const MovieList(itemCount: 6, movieCategory: 'top_movies'),
+          MovieListTitle(theme: theme, title: 'New Releases'),
+          const MovieList(itemCount: 6, movieCategory: 'new_movies'),
+          const SliverPadding(padding: EdgeInsets.only(top: 24)),
+        ],
       ),
     );
   }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:movies_4u/theme/movie_color.dart';
+import '../../../constants/image_routes.dart';
+import '../../../theme/movie_color.dart';
 
 class TopHeader extends StatelessWidget {
   const TopHeader({
@@ -15,24 +17,37 @@ class TopHeader extends StatelessWidget {
     return SliverToBoxAdapter(
       child: Stack(
         children: [
-          Image.asset('assets/images/home_header.png'),
+          ShaderMask(
+            shaderCallback: (bounds) => const LinearGradient(
+              begin: FractionalOffset.bottomLeft,
+              end: FractionalOffset.center,
+              colors: [
+                Color(0xff181A20),
+                Colors.white,
+              ],
+            ).createShader(bounds),
+            blendMode: BlendMode.modulate,
+            child: Image.asset(
+              ImagesRoute.homeTopHeaderImage,
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
             child: Row(
               children: [
-                SvgPicture.asset('assets/images/app_logo.svg'),
+                SvgPicture.asset(ImagesRoute.appLogo),
                 const Spacer(),
-                SvgPicture.asset('assets/images/icon_search.svg'),
+                SvgPicture.asset(ImagesRoute.icSearch),
                 const SizedBox(
                   width: 24,
                 ),
-                SvgPicture.asset('assets/images/icon_bell.svg'),
+                SvgPicture.asset(ImagesRoute.icBell),
               ],
             ),
           ),
           Positioned(
-            bottom: 24,
-            left: 24,
+            bottom: 24.h,
+            left: 24.w,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -41,16 +56,16 @@ class TopHeader extends StatelessWidget {
                   style: theme.textTheme.headlineMedium!
                       .copyWith(color: MovieColors.white),
                 ),
-                const SizedBox(
-                  height: 8,
+                SizedBox(
+                  height: 8.h,
                 ),
                 Text(
                   'Action, Superhero, Science Fiction, ...',
                   style: theme.textTheme.bodySmall!.copyWith(
                       color: MovieColors.white, fontWeight: FontWeight.w500),
                 ),
-                const SizedBox(
-                  height: 8,
+                SizedBox(
+                  height: 8.h,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -65,7 +80,7 @@ class TopHeader extends StatelessWidget {
                       onPressed: () {},
                       child: Row(
                         children: [
-                          SvgPicture.asset('assets/images/icon_play.svg'),
+                          SvgPicture.asset(ImagesRoute.icPlay),
                           const SizedBox(
                             width: 8,
                           ),
@@ -86,15 +101,15 @@ class TopHeader extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.transparent,
                         shape: RoundedRectangleBorder(
-                          side:
-                          const BorderSide(color: MovieColors.white, width: 2),
+                          side: const BorderSide(
+                              color: MovieColors.white, width: 2),
                           borderRadius: BorderRadius.circular(100),
                         ),
                       ),
                       onPressed: () {},
                       child: Row(
                         children: [
-                          SvgPicture.asset('assets/images/icon_plus.svg'),
+                          SvgPicture.asset(ImagesRoute.icPlus),
                           const SizedBox(
                             width: 8,
                           ),
