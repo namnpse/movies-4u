@@ -68,6 +68,7 @@ flutter:
     - assets/images/new_movies/
     - assets/images/top_movies/
     - assets/images/bottom_nav/
+    - assets/images/downloads/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

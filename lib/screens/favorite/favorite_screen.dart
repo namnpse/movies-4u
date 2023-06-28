@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../common/widgets/search_app_bar.dart';
 import '../../constants/image_routes.dart';
 import '../../theme/color_builder.dart';
 import '../../theme/movie_color.dart';
@@ -19,32 +20,13 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
     var brightness = MediaQuery.of(context).platformBrightness;
     ThemeData theme = Theme.of(context);
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: MovieColors.white,
-        title: Padding(
-          padding: const EdgeInsets.only(top: 24),
-          child: Text(
-            'My List',
-            style: theme.textTheme.headlineMedium!.copyWith(color: AppFontColorBuilder.getGrey900AndWhite(context)),
-          ),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(top: 24, right: 24),
-            child: SvgPicture.asset(
-              ImagesRoute.icSearch,
-              color: AppFontColorBuilder.getGrey900AndWhite(context),
-            ),
-          )
-        ],
-        leading: Padding(
-          padding: const EdgeInsets.only(top: 24, left: 24),
-          child: SvgPicture.asset(
-            ImagesRoute.appLogo,
-            height: 32,
-            width: 32,
-          ),
+      appBar: const PreferredSize(
+        preferredSize: Size(double.infinity, 56),
+        child: MovieAppBar(
+          appBarTitle: 'My List',
+          actions: [
+            SearchAppBarAction(),
+          ],
         ),
       ),
       body: SafeArea(

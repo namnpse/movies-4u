@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../constants/image_routes.dart';
 import '../../theme/movie_color.dart';
+import '../download/download_screen.dart';
 import '../explore/explore_screen.dart';
 import '../favorite/favorite_screen.dart';
 import '../home/home_screen.dart';
@@ -109,7 +110,7 @@ class _BaseScreenState extends State<BaseScreen> {
     const HomeScreen(),
     const ExploreScreen(),
     const FavoriteScreen(),
-    const HomeScreen(),
+    const DownloadScreen(),
     const HomeScreen(),
   ];
 }

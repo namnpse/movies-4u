@@ -11,6 +11,7 @@ class ImagesRoute {
   static const String icPlay = 'assets/images/ic_play.svg';
   static const String icPlus = 'assets/images/ic_plus.svg';
   static const String icFilter = 'assets/images/ic_filter.svg';
+  static const String icTrash = 'assets/images/ic_trash.svg';
   
   // Bottom Navigation
   static const String icHome = 'assets/images/bottom_nav/ic_home.svg';
