@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'screens/base/main_screen.dart';
 import 'screens/home/home_screen.dart';
 import 'theme/movie_theme.dart';
 
@@ -21,7 +22,7 @@ class MovieApp extends StatelessWidget {
         theme: MovieTheme.lightMode,
         darkTheme: MovieTheme.darkMode,
         themeMode: ThemeMode.system,
-        home: const HomeScreen(),
+        home: const BaseScreen(),
       ),
     );
   }

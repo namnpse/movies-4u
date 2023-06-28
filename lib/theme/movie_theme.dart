@@ -18,12 +18,26 @@ class MovieTheme {
   );
 
   static ThemeData lightMode = ThemeData(
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        elevation: 0,
+        backgroundColor: MovieColors.white,
+        unselectedLabelStyle:
+        GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w500),
+        selectedLabelStyle: GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w700),
+      ),
       scaffoldBackgroundColor: MovieColors.white,
       brightness: Brightness.light,
       primaryColor: MovieColors.primary,
       textTheme: appTextTheme);
 
   static ThemeData darkMode = ThemeData(
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        unselectedLabelStyle:
+        GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w500),
+        selectedLabelStyle: GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w700),
+        elevation: 0,
+        backgroundColor: const Color(0xff181A20).withOpacity(0.8),
+      ),
       scaffoldBackgroundColor: MovieColors.dark1,
       brightness: Brightness.dark,
       primaryColor: MovieColors.primary,

@@ -36,7 +36,7 @@ class MovieCardItem extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
           decoration: BoxDecoration(color: theme.primaryColor, borderRadius: BorderRadius.circular(6)),
           child: Text(
-            randomMovie(minPoint: 7, maxPoint: 10),
+            randomMovieRating(minPoint: 7, maxPoint: 10),
             style: theme.textTheme.labelSmall!.copyWith(
               fontWeight: FontWeight.w600,
               color: MovieColors.white,
