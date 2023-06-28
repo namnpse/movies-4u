@@ -1,6 +1,8 @@
 class ImagesRoute {
   // Images
-  static const String homeTopHeaderImage = 'assets/images/home_header.png';
+  static const String homeTopHeaderImage = 'assets/images/12.jpg';
+  static const String emptyListLight = 'assets/images/img_empty_list_light.png';
+  static const String emptyListDark = 'assets/images/img_empty_list_dark.png';
 
   // Icons
   static const String appLogo = 'assets/images/app_logo.svg';

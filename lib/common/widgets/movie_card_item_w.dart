@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_4u/utils/random_movie.dart';
 
-import '../../../theme/movie_color.dart';
+import '../../theme/movie_color.dart';
 
 class MovieCardItem extends StatelessWidget {
   final int itemIndex;

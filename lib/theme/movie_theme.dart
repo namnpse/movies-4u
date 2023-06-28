@@ -18,6 +18,7 @@ class MovieTheme {
   );
 
   static ThemeData lightMode = ThemeData(
+      appBarTheme: const AppBarTheme(backgroundColor: MovieColors.white),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         elevation: 0,
         backgroundColor: MovieColors.white,
@@ -31,6 +32,7 @@ class MovieTheme {
       textTheme: appTextTheme);
 
   static ThemeData darkMode = ThemeData(
+      appBarTheme: const AppBarTheme(backgroundColor: MovieColors.dark1),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         unselectedLabelStyle:
         GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w500),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/movie_list_tile_w.dart';
+import 'widgets/movie_list_label_w.dart';
 import 'widgets/movie_list_w.dart';
 import 'widgets/top_header_w.dart';
 

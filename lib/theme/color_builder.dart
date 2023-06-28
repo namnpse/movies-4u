@@ -9,6 +9,18 @@ class AppFontColorBuilder {
     return isLightMode ? MovieColors.grey900 : MovieColors.white;
   }
 
+  static Color getGrey800AndWhite(BuildContext context) {
+    var brightness = MediaQuery.of(context).platformBrightness;
+    bool isLightMode = brightness == Brightness.light;
+    bool isDarkMode = brightness == Brightness.dark;
+
+    return isLightMode
+        ? MovieColors.grey800
+        : isDarkMode
+        ? MovieColors.white
+        : Colors.blue;
+  }
+
   static Color getGrey100AndDark2(BuildContext context) {
     var brightness = MediaQuery.of(context).platformBrightness;
     bool isLightMode = brightness == Brightness.light;

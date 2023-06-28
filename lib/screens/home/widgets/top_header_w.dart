@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../constants/image_routes.dart';
 import '../../../theme/movie_color.dart';
@@ -16,7 +15,11 @@ class TopHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Stack(
-        children: [const _TopImageSection(), const _TopIconsSection(), _BottomSection(theme: theme)],
+        children: const [
+          _TopImageSection(),
+          _TopIconsSection(),
+          _BottomSection(),
+        ],
       ),
     );
   }
@@ -51,6 +54,13 @@ class _TopImageSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    const designHeight = 926.0;
+    const imageHeight = 400.0;
+
+    final heightRatio = screenHeight / designHeight;
+
+    final responsiveImageHeight = heightRatio * imageHeight;
     return ShaderMask(
       shaderCallback: (bounds) => const LinearGradient(
         begin: FractionalOffset.bottomLeft,
@@ -63,8 +73,8 @@ class _TopImageSection extends StatelessWidget {
       blendMode: BlendMode.modulate,
       child: Image.asset(
         ImagesRoute.homeTopHeaderImage,
+        height: responsiveImageHeight,
         fit: BoxFit.cover,
-        height: MediaQuery.of(context).size.height * 0.43,
         width: double.infinity,
       ),
     );
@@ -73,16 +83,15 @@ class _TopImageSection extends StatelessWidget {
 
 class _BottomSection extends StatelessWidget {
   const _BottomSection({
-    required this.theme,
+    super.key,
   });
-
-  final ThemeData theme;
 
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
     return Positioned(
-      bottom: 24.h,
-      left: 24.w,
+      bottom: 24,
+      left: 24,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -90,16 +99,12 @@ class _BottomSection extends StatelessWidget {
             'Dr. Strange 2',
             style: theme.textTheme.headlineMedium!.copyWith(color: MovieColors.white),
           ),
-          SizedBox(
-            height: 8.h,
-          ),
+          const SizedBox(height: 8),
           Text(
             'Action, Superhero, Science Fiction, ...',
             style: theme.textTheme.bodySmall!.copyWith(color: MovieColors.white, fontWeight: FontWeight.w500),
           ),
-          SizedBox(
-            height: 8.h,
-          ),
+          const SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [

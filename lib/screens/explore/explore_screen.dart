@@ -5,7 +5,9 @@ import 'package:movies_4u/theme/movie_color.dart';
 
 import '../../constants/image_routes.dart';
 import '../../theme/color_builder.dart';
-import '../home/widgets/movie_card_item_w.dart';
+import '../../common/widgets/movie_card_item_w.dart';
+
+List<String> get movieFilters => ['Movie', 'US', 'Action', '2022', 'Latest Release'];
 
 class ExploreScreen extends StatefulWidget {
   const ExploreScreen({Key? key}) : super(key: key);
@@ -43,14 +45,12 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         duration: const Duration(milliseconds: 500),
                         height: 56.h,
                         decoration: BoxDecoration(
-                          color:
-                          AppFontColorBuilder.getGrey100AndDark2(context),
+                          color: AppFontColorBuilder.getGrey100AndDark2(context),
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
                             color: searchFocusNode.hasFocus
                                 ? theme.primaryColor
-                                : AppFontColorBuilder.getGrey100AndDark2(
-                                context),
+                                : AppFontColorBuilder.getGrey100AndDark2(context),
                             width: 1,
                           ),
                         ),
@@ -58,23 +58,18 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         child: TextField(
                           focusNode: searchFocusNode,
                           style: theme.textTheme.bodyMedium!.copyWith(
-                              fontWeight: FontWeight.w600,
-                              color: AppFontColorBuilder.getGrey900AndWhite(
-                                  context)),
+                              fontWeight: FontWeight.w600, color: AppFontColorBuilder.getGrey900AndWhite(context)),
                           decoration: InputDecoration(
                             enabledBorder: InputBorder.none,
                             focusedBorder: InputBorder.none,
                             hintText: 'Search',
                             hintStyle: theme.textTheme.bodyMedium!.copyWith(
-                                color: AppFontColorBuilder.getGrey600AndGrey400(
-                                    context),
-                                fontWeight: FontWeight.w500),
+                                color: AppFontColorBuilder.getGrey600AndGrey400(context), fontWeight: FontWeight.w500),
                             icon: SvgPicture.asset(
                               ImagesRoute.icSearch,
                               color: searchFocusNode.hasFocus
                                   ? theme.primaryColor
-                                  : AppFontColorBuilder.getGrey600AndGrey400(
-                                  context),
+                                  : AppFontColorBuilder.getGrey600AndGrey400(context),
                             ),
                           ),
                         ),
@@ -106,18 +101,15 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   scrollDirection: Axis.horizontal,
                   itemCount: 5,
                   itemBuilder: (context, index) => Container(
-                    padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    margin: EdgeInsets.only(
-                        right: index == 4 ? 24 : 0, left: index == 0 ? 24 : 12),
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    margin: EdgeInsets.only(right: index == 4 ? 24 : 0, left: index == 0 ? 24 : 12),
                     decoration: BoxDecoration(
                       color: theme.primaryColor,
                       borderRadius: BorderRadius.circular(100),
                     ),
                     child: Text(
                       'Vietnam',
-                      style: theme.textTheme.bodyLarge!.copyWith(
-                          color: MovieColors.white, fontWeight: FontWeight.w600),
+                      style: theme.textTheme.bodyLarge!.copyWith(color: MovieColors.white, fontWeight: FontWeight.w600),
                     ),
                   ),
                 ),
@@ -128,15 +120,19 @@ class _ExploreScreenState extends State<ExploreScreen> {
               sliver: SliverGrid(
                 delegate: SliverChildBuilderDelegate(
                   childCount: 6,
-                      (context, index) => MovieCardItem(
+                  (context, index) => MovieCardItem(
                     itemIndex: index,
                     itemCount: 5,
-                    movieCategory: 'new_movies',needsSpacing: false,),),
+                    movieCategory: 'new_movies',
+                    needsSpacing: false,
+                  ),
+                ),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    childAspectRatio: 2 / 2.5,
-                    mainAxisSpacing: 10,
-                    crossAxisSpacing: 10,
-                    crossAxisCount: 2),
+                  childAspectRatio: 2 / 2.6,
+                  mainAxisSpacing: 8,
+                  crossAxisSpacing: 8,
+                  crossAxisCount: 2,
+                ),
               ),
             )
           ],
