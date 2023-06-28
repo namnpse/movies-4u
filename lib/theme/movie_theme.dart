@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movies_4u/theme/movie_color.dart';
+
+import 'movie_color.dart';
 
 class MovieTheme {
   static TextTheme appTextTheme = TextTheme(
@@ -22,8 +23,7 @@ class MovieTheme {
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         elevation: 0,
         backgroundColor: MovieColors.white,
-        unselectedLabelStyle:
-        GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w500),
+        unselectedLabelStyle: GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w500),
         selectedLabelStyle: GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w700),
       ),
       scaffoldBackgroundColor: MovieColors.white,
@@ -34,8 +34,7 @@ class MovieTheme {
   static ThemeData darkMode = ThemeData(
       appBarTheme: const AppBarTheme(backgroundColor: MovieColors.dark1),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        unselectedLabelStyle:
-        GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w500),
+        unselectedLabelStyle: GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w500),
         selectedLabelStyle: GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w700),
         elevation: 0,
         backgroundColor: const Color(0xff181A20).withOpacity(0.8),
@@ -44,4 +43,36 @@ class MovieTheme {
       brightness: Brightness.dark,
       primaryColor: MovieColors.primary,
       textTheme: appTextTheme);
+}
+
+class MovieDynamicColorBuilder {
+  static bool? isDarkMode;
+
+  static Color getGrey900AndWhite(BuildContext context) {
+    return isDarkMode ?? true ? MovieColors.white : MovieColors.grey900;
+  }
+
+  static Color getGrey800AndWhite(BuildContext context) {
+    return isDarkMode ?? true ? MovieColors.white : MovieColors.grey800;
+  }
+
+  static Color getGrey800AndGrey300(BuildContext context) {
+    return isDarkMode ?? true ? MovieColors.grey300 : MovieColors.grey800;
+  }
+
+  static Color getGrey700AndGrey300(BuildContext context) {
+    return isDarkMode ?? true ? MovieColors.grey300 : MovieColors.grey700;
+  }
+
+  static Color getGrey100AndDark2(BuildContext context) {
+    return isDarkMode ?? true ? MovieColors.dark2 : MovieColors.grey100;
+  }
+
+  static Color getGrey600AndGrey400(BuildContext context) {
+    // var brightness = MediaQuery.of(context).platformBrightness;
+    // bool isLightMode = brightness == Brightness.light;
+    // bool isDarkMode = brightness == Brightness.dark;
+
+    return isDarkMode ?? true ? MovieColors.grey600 : MovieColors.grey400;
+  }
 }

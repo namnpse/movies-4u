@@ -6,10 +6,7 @@ import '../../../theme/movie_color.dart';
 class TopHeader extends StatelessWidget {
   const TopHeader({
     super.key,
-    required this.theme,
   });
-
-  final ThemeData theme;
 
   @override
   Widget build(BuildContext context) {

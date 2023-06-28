@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
 import '../../constants/image_routes.dart';
 import '../../theme/color_builder.dart';
+import '../../theme/movie_theme.dart';
+import '../../theme/theme_notifier.dart';
 
 class MovieAppBar extends StatelessWidget {
   final String appBarTitle;
@@ -23,7 +26,9 @@ class MovieAppBar extends StatelessWidget {
         padding: const EdgeInsets.only(top: 24),
         child: Text(
           appBarTitle,
-          style: theme.textTheme.headlineMedium!.copyWith(color: AppFontColorBuilder.getGrey900AndWhite(context)),
+          style: theme.textTheme.headlineMedium!.copyWith(
+            color: MovieDynamicColorBuilder.getGrey900AndWhite(context),
+          ),
         ),
       ),
       actions: actions,
@@ -46,11 +51,13 @@ class SearchAppBarAction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 24, right: 24),
-      child: SvgPicture.asset(
-        ImagesRoute.icSearch,
-        color: AppFontColorBuilder.getGrey900AndWhite(context),
+    return Consumer<ThemeNotifier>(
+      builder: (context, ThemeNotifier themeNotifier, child) => Padding(
+        padding: const EdgeInsets.only(top: 24, right: 24),
+        child: SvgPicture.asset(
+          ImagesRoute.icSearch,
+          color: MovieDynamicColorBuilder.getGrey900AndWhite(context),
+        ),
       ),
     );
   }

@@ -2,18 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../theme/movie_color.dart';
-import 'explore_screen.dart';
+import '../../../constants/movie_static_data.dart';
 
 class MovieFilters extends StatelessWidget {
   const MovieFilters({
     super.key,
-    required this.theme,
   });
-
-  final ThemeData theme;
 
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
     return SliverToBoxAdapter(
       child: SizedBox(
         height: 40.h,
@@ -29,7 +27,7 @@ class MovieFilters extends StatelessWidget {
               borderRadius: BorderRadius.circular(100),
             ),
             child: Text(
-              movieFilters[index],
+              MovieStaticData.movieFilters[index],
               style: theme.textTheme.bodyLarge!.copyWith(
                   color: MovieColors.white, fontWeight: FontWeight.w600),
             ),

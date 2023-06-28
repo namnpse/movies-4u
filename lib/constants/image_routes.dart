@@ -28,4 +28,11 @@ class ImagesRoute {
   static const String icDownloadSelected = 'assets/images/bottom_nav/ic_download_selected.svg';
   static const String icProfile = 'assets/images/bottom_nav/ic_profile.svg';
   static const String icProfileSelected = 'assets/images/bottom_nav/ic_profile_selected.svg';
+  
+  // Profile
+  static const String icSecurity = 'assets/images/profile/ic_security.svg';
+  static const String icLanguage = 'assets/images/profile/ic_language.svg';
+  static const String icEye = 'assets/images/profile/ic_eye.svg';
+  static const String icHelp = 'assets/images/profile/ic_help.svg';
+  static const String icPrivacy = 'assets/images/profile/ic_privacy.svg';
 }
