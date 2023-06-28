@@ -75,4 +75,44 @@ class MovieDynamicColorBuilder {
 
     return isDarkMode ?? true ? MovieColors.grey600 : MovieColors.grey400;
   }
+
+  static Color getWhiteAndDark2(BuildContext context) {
+    // var brightness = MediaQuery.of(context).platformBrightness;
+    // bool isLightMode = brightness == Brightness.light;
+    // bool isDarkMode = brightness == Brightness.dark;
+
+    return isDarkMode ?? true
+        ? MovieColors.dark2
+        : MovieColors.white;
+  }
+
+  static Color getPrimary100AndDark3(BuildContext context) {
+    // var brightness = MediaQuery.of(context).platformBrightness;
+    // bool isLightMode = brightness == Brightness.light;
+    // bool isDarkMode = brightness == Brightness.dark;
+
+    return isDarkMode ?? true
+        ? MovieColors.dark3
+        : MovieColors.primary.withOpacity(0.2);
+  }
+
+  static Color getPrimaryAndWhite(BuildContext context) {
+    // var brightness = MediaQuery.of(context).platformBrightness;
+    // bool isLightMode = brightness == Brightness.light;
+    // bool isDarkMode = brightness == Brightness.dark;
+
+    return isDarkMode ?? true
+        ? MovieColors.white
+        : MovieColors.primary;
+  }
+
+  static Color getDark3AndGrey200(BuildContext context) {
+    // var brightness = MediaQuery.of(context).platformBrightness;
+    // bool isLightMode = brightness == Brightness.light;
+    // bool isDarkMode = brightness == Brightness.dark;
+
+    return isDarkMode ?? true
+        ? MovieColors.dark3
+        : MovieColors.grey200;
+  }
 }

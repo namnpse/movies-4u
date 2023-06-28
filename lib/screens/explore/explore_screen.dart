@@ -28,13 +28,15 @@ class _ExploreScreenState extends State<ExploreScreen> {
   @override
   Widget build(BuildContext context) {
     return Consumer<ThemeNotifier>(
-      builder: (context, value, child) => const Scaffold(
+      builder: (context, value, child) => Scaffold(
         body: SafeArea(
           child: CustomScrollView(
             slivers: [
-              SearchAndFilter(),
-              MovieFilters(),
-              SliverPadding(
+              const SearchAndFilter(),
+              SliverToBoxAdapter(
+                child: MovieFilters(),
+              ),
+              const SliverPadding(
                 padding:
                 EdgeInsets.symmetric(horizontal: 24, vertical: 24),
                 sliver: MoviesGrid(
