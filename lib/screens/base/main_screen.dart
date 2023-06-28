@@ -9,6 +9,7 @@ import '../download/download_screen.dart';
 import '../explore/explore_screen.dart';
 import '../favorite/favorite_screen.dart';
 import '../home/home_screen.dart';
+import '../profile/profile_screen.dart';
 
 class BaseScreen extends StatefulWidget {
   const BaseScreen({Key? key}) : super(key: key);
@@ -111,6 +112,6 @@ class _BaseScreenState extends State<BaseScreen> {
     const ExploreScreen(),
     const FavoriteScreen(),
     const DownloadScreen(),
-    const HomeScreen(),
+    const ProfileScreen(),
   ];
 }

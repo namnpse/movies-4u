@@ -48,15 +48,15 @@ class _DownloadScreenState extends State<DownloadScreen> {
 }
 
 class DownloadMovieItem extends StatelessWidget {
-  int index;
+  final int index;
 
-  DownloadMovieItem({Key? key, required this.index}) : super(key: key);
+  const DownloadMovieItem({Key? key, required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
+      padding:  EdgeInsets.symmetric(horizontal: 24.w),
       margin: EdgeInsets.only(
           top: index == 0 ? 32.h : 16.h, bottom: index == 5 ? 32.h : 0),
       child: Row(
@@ -70,7 +70,7 @@ class DownloadMovieItem extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              padding: const EdgeInsets.only(left: 20),
+              padding:  EdgeInsets.only(left: 20.w),
               child: Column(
                 // mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
