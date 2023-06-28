@@ -24,6 +24,7 @@ class MovieList extends StatelessWidget {
             itemIndex: index,
             itemCount: itemCount,
             movieCategory: movieCategory,
+            needsSpacing: true,
           ),
         ),
       ),

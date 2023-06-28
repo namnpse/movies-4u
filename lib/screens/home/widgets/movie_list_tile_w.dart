@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../theme/color_builder.dart';
 
@@ -16,7 +17,7 @@ class MovieListTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
-      padding: const EdgeInsets.all(24),
+      padding:  EdgeInsets.all(24.w),
       sliver: SliverToBoxAdapter(
         child: Row(
           children: [

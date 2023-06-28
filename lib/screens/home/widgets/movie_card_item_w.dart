@@ -1,32 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:movies_4u/theme/movie_color.dart';
+import 'package:movies_4u/utils/random_movie.dart';
 
-import '../../../utils/random_movie.dart';
+import '../../../theme/movie_color.dart';
 
 class MovieCardItem extends StatelessWidget {
   final int itemIndex;
   final int itemCount;
   final String movieCategory;
+  final bool needsSpacing;
 
   const MovieCardItem({
     Key? key,
     required this.itemIndex,
     required this.itemCount,
     required this.movieCategory,
+    required this.needsSpacing,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     return Container(
-      height: 200,
       width: 150.w,
-      margin: EdgeInsets.only(left: itemIndex == 0 ? 24.w : 10, right: itemIndex == itemCount - 1 ? 24.w : 0),
-      decoration:  BoxDecoration(
+      margin: needsSpacing
+          ? EdgeInsets.only(left: itemIndex == 0 ? 24.w : 10.w, right: itemIndex == itemCount - 1 ? 24.w : 0)
+          : null,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
         image: DecorationImage(
           image: AssetImage('assets/images/$movieCategory/$itemIndex.png'),
-          fit: BoxFit.cover,
+          fit: BoxFit.fitHeight,
         ),
       ),
       child: Align(
@@ -37,10 +41,7 @@ class MovieCardItem extends StatelessWidget {
           decoration: BoxDecoration(color: theme.primaryColor, borderRadius: BorderRadius.circular(6)),
           child: Text(
             randomMovieRating(minPoint: 7, maxPoint: 10),
-            style: theme.textTheme.labelSmall!.copyWith(
-              fontWeight: FontWeight.w600,
-              color: MovieColors.white,
-            ),
+            style: theme.textTheme.labelSmall!.copyWith(fontWeight: FontWeight.w600, color: MovieColors.white),
           ),
         ),
       ),
