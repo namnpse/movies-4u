@@ -49,7 +49,7 @@ class FilterButton extends StatelessWidget {
           context: context,
           isScrollControlled: true,
           backgroundColor: Colors.transparent,
-          barrierColor: const Color(0xff09101D).withOpacity(0.7),
+          barrierColor: const Color(0xff09101D).withOpacity(.7),
           builder: (context) => Padding(
             padding: EdgeInsets.only(
                 bottom: MediaQuery.of(context).viewInsets.bottom),
@@ -58,6 +58,7 @@ class FilterButton extends StatelessWidget {
               minChildSize: .4,
               maxChildSize: .9,
               builder: (context, scrollController) => Container(
+                padding: EdgeInsets.only(top: 20.h),
                 decoration: BoxDecoration(
                   color: MovieDynamicColorBuilder.getWhiteAndDark2(context),
                   borderRadius: const BorderRadius.only(
@@ -72,8 +73,8 @@ class FilterButton extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SizedBox(height: 24,),
                       SizedBox(
+                        height: 24,
                         width: double.infinity,
                         child: Text(
                           'Sort & Filter',
@@ -163,7 +164,7 @@ class FilterButton extends StatelessWidget {
                                   onPressed: () {
                                     Navigator.pop(context);
                                   },
-                                  child: Text('Moviely',
+                                  child: Text('Confirm',
                                       style: theme.textTheme.bodyLarge!
                                           .copyWith(color: MovieColors.white)),
                                 ),

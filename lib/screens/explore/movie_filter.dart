@@ -27,9 +27,11 @@ class _MovieFiltersState extends State<MovieFilters> {
         itemCount: 5,
         itemBuilder: (context, index) => GestureDetector(
           onTap: () {
-            setState(() {
-              widget.selectedIndex = index;
-            });
+            if (widget.selectedIndex != null) {
+              setState(() {
+                widget.selectedIndex = index;
+              });
+            }
           },
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 300),
