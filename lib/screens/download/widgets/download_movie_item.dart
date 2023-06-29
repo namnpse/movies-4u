@@ -4,18 +4,24 @@ import 'package:flutter_svg/svg.dart';
 import '../../../constants/image_routes.dart';
 import '../../../constants/movie_static_data.dart';
 import '../../../theme/movie_theme.dart';
+import '../../../utils/show_modal.dart';
 
 class DownloadMovieItem extends StatelessWidget {
   final int index;
+  final bool isDeleting;
 
-  const DownloadMovieItem({Key? key, required this.index}) : super(key: key);
+  const DownloadMovieItem({
+    Key? key,
+    required this.index,
+    required this.isDeleting,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
-      margin: EdgeInsets.only(top: index == 0 ? 32.h : 16.h, bottom: index == 5 ? 32.h : 0),
+      margin: !isDeleting ? EdgeInsets.only(top: index == 0 ? 32.h : 16.h, bottom: index == 5 ? 32.h : 0) : null,
       child: Row(
         children: [
           Stack(
@@ -60,7 +66,48 @@ class DownloadMovieItem extends StatelessWidget {
                         ),
                       ),
                       const Spacer(),
-                      SvgPicture.asset(ImagesRoute.icTrash),
+                      if (!isDeleting) ...{
+                        GestureDetector(
+                          onTap: () => showAppModal(
+                            context: context,
+                            modalTitle: 'Delete',
+                            primaryButtonTitle: 'Confirm',
+                            secondaryButtonTitle: 'Cancel',
+                            mainModalContent: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                const SizedBox(
+                                  width: double.infinity,
+                                ),
+                                Text(
+                                  'Are you sure you want to delete this \nmovie download?',
+                                  textAlign: TextAlign.center,
+                                  style: theme.textTheme.headlineSmall!.copyWith(
+                                    color: MovieDynamicColorBuilder.getGrey800AndWhite(context),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 24.h,
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 40.w),
+                                  child: DownloadMovieItem(
+                                    index: index,
+                                    isDeleting: true,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 24.h,
+                                ),
+                              ],
+                            ),
+                            initChildSize: .51,
+                            minChildSize: .35,
+                            maxChildSize: .51,
+                          ),
+                          child: SvgPicture.asset(ImagesRoute.icTrash),
+                        ),
+                      },
                     ],
                   )
                 ],

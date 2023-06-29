@@ -37,8 +37,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                 child: MovieFilters(),
               ),
               const SliverPadding(
-                padding:
-                EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 24),
                 sliver: MoviesGrid(
                   childCount: 6,
                   movieCategory: 'new_movies',

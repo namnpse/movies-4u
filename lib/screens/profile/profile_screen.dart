@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 import '../../common/widgets/search_app_bar.dart';
-import '../../constants/image_routes.dart';
-import '../../theme/color_builder.dart';
-import '../../theme/movie_color.dart';
-import '../../theme/movie_gradients.dart';
 import '../../theme/movie_theme.dart';
 import '../../theme/theme_notifier.dart';
-import 'menu_w.dart';
 import 'widgets/premium_card_w.dart';
 import 'widgets/profile_item_w.dart';
 import 'widgets/user_avatar.dart';

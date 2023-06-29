@@ -28,4 +28,6 @@ class MovieStaticData {
     '2022',
     'Latest Release'
   ];
+
+  static const List<String> exploreModalTitles = ['Categories','Regions','Genre','Date','Sort'];
 }
