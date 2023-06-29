@@ -35,4 +35,5 @@ class ImagesRoute {
   static const String icEye = 'assets/images/profile/ic_eye.svg';
   static const String icHelp = 'assets/images/profile/ic_help.svg';
   static const String icPrivacy = 'assets/images/profile/ic_privacy.svg';
+  static const String icDone = 'assets/images/profile/ic_done.svg';
 }

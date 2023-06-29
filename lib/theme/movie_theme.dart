@@ -19,7 +19,10 @@ class MovieTheme {
   );
 
   static ThemeData lightMode = ThemeData(
-      appBarTheme: const AppBarTheme(backgroundColor: MovieColors.white),
+      appBarTheme: const AppBarTheme(
+          backgroundColor: MovieColors.white,
+          iconTheme: IconThemeData(color: MovieColors.grey900),
+          elevation: 0),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         elevation: 0,
         backgroundColor: MovieColors.white,
@@ -32,7 +35,10 @@ class MovieTheme {
       textTheme: appTextTheme);
 
   static ThemeData darkMode = ThemeData(
-      appBarTheme: const AppBarTheme(backgroundColor: MovieColors.dark1),
+      appBarTheme: const AppBarTheme(
+          backgroundColor: MovieColors.dark1,
+          iconTheme: IconThemeData(color: MovieColors.white),
+          elevation: 0),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         unselectedLabelStyle: GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w500),
         selectedLabelStyle: GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w700),
@@ -46,26 +52,26 @@ class MovieTheme {
 }
 
 class MovieDynamicColorBuilder {
-  static bool? isDarkMode;
+  static bool isDarkMode = false;
 
   static Color getGrey900AndWhite(BuildContext context) {
-    return isDarkMode ?? true ? MovieColors.white : MovieColors.grey900;
+    return isDarkMode ? MovieColors.white : MovieColors.grey900;
   }
 
   static Color getGrey800AndWhite(BuildContext context) {
-    return isDarkMode ?? true ? MovieColors.white : MovieColors.grey800;
+    return isDarkMode ? MovieColors.white : MovieColors.grey800;
   }
 
   static Color getGrey800AndGrey300(BuildContext context) {
-    return isDarkMode ?? true ? MovieColors.grey300 : MovieColors.grey800;
+    return isDarkMode ? MovieColors.grey300 : MovieColors.grey800;
   }
 
   static Color getGrey700AndGrey300(BuildContext context) {
-    return isDarkMode ?? true ? MovieColors.grey300 : MovieColors.grey700;
+    return isDarkMode ? MovieColors.grey300 : MovieColors.grey700;
   }
 
   static Color getGrey100AndDark2(BuildContext context) {
-    return isDarkMode ?? true ? MovieColors.dark2 : MovieColors.grey100;
+    return isDarkMode ? MovieColors.dark2 : MovieColors.grey100;
   }
 
   static Color getGrey600AndGrey400(BuildContext context) {
@@ -73,7 +79,7 @@ class MovieDynamicColorBuilder {
     // bool isLightMode = brightness == Brightness.light;
     // bool isDarkMode = brightness == Brightness.dark;
 
-    return isDarkMode ?? true ? MovieColors.grey600 : MovieColors.grey400;
+    return isDarkMode ? MovieColors.grey600 : MovieColors.grey400;
   }
 
   static Color getWhiteAndDark2(BuildContext context) {
@@ -81,7 +87,7 @@ class MovieDynamicColorBuilder {
     // bool isLightMode = brightness == Brightness.light;
     // bool isDarkMode = brightness == Brightness.dark;
 
-    return isDarkMode ?? true
+    return isDarkMode
         ? MovieColors.dark2
         : MovieColors.white;
   }
@@ -91,7 +97,7 @@ class MovieDynamicColorBuilder {
     // bool isLightMode = brightness == Brightness.light;
     // bool isDarkMode = brightness == Brightness.dark;
 
-    return isDarkMode ?? true
+    return isDarkMode
         ? MovieColors.dark3
         : MovieColors.primary.withOpacity(0.2);
   }
@@ -101,18 +107,17 @@ class MovieDynamicColorBuilder {
     // bool isLightMode = brightness == Brightness.light;
     // bool isDarkMode = brightness == Brightness.dark;
 
-    return isDarkMode ?? true
+    return isDarkMode
         ? MovieColors.white
         : MovieColors.primary;
   }
 
   static Color getDark3AndGrey200(BuildContext context) {
-    // var brightness = MediaQuery.of(context).platformBrightness;
-    // bool isLightMode = brightness == Brightness.light;
-    // bool isDarkMode = brightness == Brightness.dark;
-
-    return isDarkMode ?? true
+    return isDarkMode
         ? MovieColors.dark3
         : MovieColors.grey200;
   }
+
+  static Color getDark2AndGrey50(BuildContext context) =>
+      isDarkMode ? MovieColors.dark2 : MovieColors.grey50;
 }

@@ -20,7 +20,6 @@ class PremiumCard extends StatelessWidget {
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     return Container(
-      // height: 200,
       padding: const EdgeInsets.all(2),
       decoration: BoxDecoration(
         gradient: MovieGradients.redGradient,

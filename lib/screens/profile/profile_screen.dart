@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../common/widgets/search_app_bar.dart';
 import '../../theme/movie_theme.dart';
 import '../../theme/theme_notifier.dart';
+import '../premium/premium_screen.dart';
 import 'widgets/premium_card_w.dart';
 import 'widgets/profile_item_w.dart';
 import 'widgets/user_avatar.dart';
@@ -54,8 +55,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         fontWeight: FontWeight.w500),
                   ),
                   const SizedBox(height: 24),
-                  PremiumCard(
-                    themeNotifier: themeNotifier,
+                  InkWell(
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const PremiumScreen(),
+                      ),
+                    ),
+                    child: PremiumCard(
+                      themeNotifier: themeNotifier,
+                    ),
                   ),
                   const SizedBox(
                     height: 24,
