@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'components/background_gradient_image.dart';
-import 'components/constant.dart';
-import 'components/search_bar.dart';
+import 'components/dark_borderless_button.dart';
+import 'components/movie_ticket_app_bar.dart';
+import 'components/primary_rounded_button.dart';
 
 class BookingTicketHomeScreen extends StatefulWidget {
   const BookingTicketHomeScreen({super.key});
@@ -29,20 +30,29 @@ class _BookingTicketHomeScreenState extends State<BookingTicketHomeScreen> {
             child: Column(
               children: [
                 const Padding(padding: EdgeInsets.all(10.0)),
+                const MovieTicketAppBar(),
+                const Padding(padding: EdgeInsets.symmetric(vertical: 70.0)),
+                const Text(
+                  'NEW.MOVIE',
+                  style: TextStyle(
+                    fontSize: 15.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Image.asset('assets/images/logo.png'),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Container(
-                      width: MediaQuery.of(context).size.width * .15,
-                      height: 60.0,
-                      decoration: kRoundedFadedBorder,
-                      child: IconButton(
-                          icon: const Icon(Icons.menu),
-                          onPressed: () {
-
-                          }),
+                    DarkBorderlessButton(
+                      text: 'Popular with Friends',
+                      callback: () {},
                     ),
-                    const SearchBar(hint: 'Search Movies..'),
+                    DarkBorderlessButton(text: '18+', callback: () {}),
+                    PrimaryRoundedButton(
+                      text: '8.7',
+                      callback: () {},
+                    ),
                   ],
                 ),
               ],
