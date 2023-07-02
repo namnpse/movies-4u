@@ -51,4 +51,12 @@ final List<Movie> movies = [
       date: DateTime(2019),
       categories: ' Action, Adventure, Drama',
       technology: 'DataSat, Dolby Digital '),
+  Movie(
+      title: 'Once Upon a Time in Hollywood',
+      imageURL:'https://posterposse.com/wp-content/uploads/2019/07/Once-upon-a-time-in-hollywood-Poster-Posse-Hughes.png',
+      age: 'R',
+      rating: 7.7,
+      date: DateTime(2019),
+      categories: 'Drama, Comedy-drama',
+      technology: 'DataSat, Dolby Digital '),
 ];

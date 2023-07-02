@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-import 'components/background_gradient_image.dart';
-import 'components/dark_borderless_button.dart';
-import 'components/movie_ticket_app_bar.dart';
-import 'components/movie_ticket_card.dart';
-import 'components/primary_rounded_button.dart';
-import 'components/red_rounded_action_button.dart';
-import 'constant/constant.dart';
-import 'model/movie.dart';
+import '../components/background_gradient_image.dart';
+import '../components/dark_borderless_button.dart';
+import '../components/movie_ticket_app_bar.dart';
+import '../components/movie_ticket_card.dart';
+import '../components/primary_rounded_button.dart';
+import '../components/red_rounded_action_button.dart';
+import '../constant/constant.dart';
+import '../model/movie.dart';
+import 'buy_ticket_screen.dart';
 
 class BookingTicketHomeScreen extends StatefulWidget {
   BookingTicketHomeScreen({super.key});
@@ -84,16 +85,19 @@ class _BookingTicketHomeScreenState extends State<BookingTicketHomeScreen> {
                   ),
                 ),
                 Image.asset('assets/images/divider.png'),
-                RedRoundedActionButton(text: 'BUY TICKET', callback: () {}),
+                RedRoundedActionButton(text: 'BUY TICKET', callback: () {
+                  _navigateToBuyTicketScreen(movies[widget.index].title);
+                }),
                 Expanded(
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: movies.length,
+                    shrinkWrap: true,
                     itemBuilder: (context, index) {
                       return MovieTicketCard(
                           title: movies[index].title,
                           imageLink: movies[index].imageURL,
-                          active: index == widget.index ? true : false,
+                          active: index == widget.index,
                           callBack: () {
                             setState(() {
                               widget.index = index;
@@ -107,6 +111,15 @@ class _BookingTicketHomeScreenState extends State<BookingTicketHomeScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  void _navigateToBuyTicketScreen(String title) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => BuyTicketScreen(movies[widget.index].title)
       ),
     );
   }
