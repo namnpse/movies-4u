@@ -20,7 +20,7 @@ class CalendarDay extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: Container(
         width: 50.0,
-        height: 80.0,
+        height: 65.0,
         decoration: BoxDecoration(color: isActive ? kPimaryColor : null, borderRadius: BorderRadius.circular(15.0)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

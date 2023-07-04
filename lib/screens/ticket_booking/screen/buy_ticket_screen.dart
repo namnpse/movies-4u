@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies_4u/screens/ticket_booking/components/cinema_seats_view.dart';
 
 import '../components/calendar_day_w.dart';
 import '../components/show_time_w.dart';
@@ -23,14 +24,17 @@ class BuyTicketScreen extends StatelessWidget {
                 children: <Widget>[
                   Container(
                     width: MediaQuery.of(context).size.width * .15,
-                    height: 60.0,
+                    height: 55.0,
                     decoration: kRoundedFadedBorder,
                     child: IconButton(
                         icon: const Icon(
                           Icons.keyboard_arrow_left,
                           size: 28.0,
                         ),
-                        onPressed: () {}),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                    ),
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .75,
@@ -155,7 +159,8 @@ class BuyTicketScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Center(child: Image.asset('assets/images/screen.png')),
+            // Center(child: Image.asset('assets/images/screen.png')),
+            const CinemaSeatsView(),
           ],
         ),
       ),
