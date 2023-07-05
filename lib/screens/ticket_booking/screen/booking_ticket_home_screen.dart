@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies_4u/constants/image_routes.dart';
 
 import '../components/background_gradient_image.dart';
 import '../components/dark_borderless_button.dart';
@@ -53,7 +54,8 @@ class _BookingTicketHomeScreenState extends State<BookingTicketHomeScreen> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Image.asset('assets/images/logo.png'),
+                // Image.asset(ImagesRoute.icJoker),
+                Image.asset(movies[widget.index].logo),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -70,9 +72,9 @@ class _BookingTicketHomeScreenState extends State<BookingTicketHomeScreen> {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
+                  child: Wrap(
+                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
                       Text(
                         year,
                         style: kSmallMainTextStyle,
@@ -84,7 +86,7 @@ class _BookingTicketHomeScreenState extends State<BookingTicketHomeScreen> {
                     ],
                   ),
                 ),
-                Image.asset('assets/images/divider.png'),
+                Image.asset(ImagesRoute.divider),
                 RedRoundedActionButton(text: 'BUY TICKET', callback: () {
                   _navigateToBuyTicketScreen(movies[widget.index].title);
                 }),

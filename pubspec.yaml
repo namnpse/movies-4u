@@ -79,6 +79,8 @@ flutter:
     - assets/images/bottom_nav/
     - assets/images/downloads/
     - assets/images/profile/
+    - assets/images/ticket_booking/
+    - assets/images/ticket_booking/logo/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

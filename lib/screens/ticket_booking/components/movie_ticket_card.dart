@@ -31,7 +31,7 @@ class MovieTicketCard extends StatelessWidget {
                   : MediaQuery.of(context).size.width / 4,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(25.0),
-                child: Image.network(imageLink),
+                child: Image.network(imageLink, fit: BoxFit.cover),
               ),
             ),
           ),

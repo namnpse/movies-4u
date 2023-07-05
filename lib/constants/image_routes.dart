@@ -36,4 +36,9 @@ class ImagesRoute {
   static const String icHelp = 'assets/images/profile/ic_help.svg';
   static const String icPrivacy = 'assets/images/profile/ic_privacy.svg';
   static const String icDone = 'assets/images/profile/ic_done.svg';
+
+  // Ticket Booking
+  static const String icJoker = 'assets/images/ticket_booking/logo/joker.png';
+  static const String divider = 'assets/images/ticket_booking/divider.png';
+  static const String ticketScreen = 'assets/images/ticket_booking/screen.png';
 }

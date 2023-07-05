@@ -5,6 +5,7 @@ import '../../common/widgets/search_app_bar.dart';
 import '../../theme/movie_theme.dart';
 import '../../theme/theme_notifier.dart';
 import '../premium/premium_screen.dart';
+import '../ticket_booking/screen/booking_ticket_home_screen.dart';
 import 'widgets/premium_card_w.dart';
 import 'widgets/profile_item_w.dart';
 import 'widgets/user_avatar.dart';
@@ -73,9 +74,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: 8,
-                      itemBuilder: (context, index) => ProfileOptionItem(
-                        index: index,
-                        themeNotifier: themeNotifier,
+                      itemBuilder: (context, index) => GestureDetector(
+                        onTap: () {
+                          if(index == 3) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => BookingTicketHomeScreen()
+                              ),
+                            );
+                          }
+                        },
+                        child: ProfileOptionItem(
+                          index: index,
+                          themeNotifier: themeNotifier,
+                        ),
                       ),
                     ),
                   )
