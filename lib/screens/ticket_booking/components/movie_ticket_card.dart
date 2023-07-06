@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../constant/constant.dart';
 
 class MovieTicketCard extends StatelessWidget {
-
   final String imageLink;
   final String title;
   final Function()? callBack;
@@ -18,6 +17,9 @@ class MovieTicketCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final displayTitle = active
+        ? (title.length < 15 ? title : '${title.substring(0, 15)}...' )
+        : '';
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
@@ -36,7 +38,8 @@ class MovieTicketCard extends StatelessWidget {
             ),
           ),
         ),
-        Text(active ? title : '', style: kMovieNameStyle)
+        const SizedBox(height: 8),
+        Text(displayTitle, style: kMovieNameStyle)
       ],
     );
   }

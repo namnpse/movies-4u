@@ -40,7 +40,7 @@ final List<Movie> movies = [
       categories: 'Crime, Drama, Thriller',
       technology: 'DataSat, Dolby Digital '),
   Movie(
-      title: 'JOKER',
+      title: 'Joker',
       imageURL: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/c58b4681277211.5cfa6e54a6d3d.jpg',
       logo: 'assets/images/ticket_booking/logo/joker.png',
       age: '18+',
@@ -49,7 +49,7 @@ final List<Movie> movies = [
       categories: 'Crime, Drama, Thriller',
       technology: 'DataSat, Dolby Digital '),
   Movie(
-      title: 'Avengers: Endgame',
+      title: 'Avengers',
       logo: 'assets/images/ticket_booking/logo/avengers.png',
       imageURL: 'https://cdn.europosters.eu/image/1300/posters/avengers-endgame-journey-s-end-i122136.jpg',
       age: 'PG-13',
@@ -58,7 +58,7 @@ final List<Movie> movies = [
       categories: ' Action, Adventure, Drama',
       technology: 'DataSat, Dolby Digital '),
   Movie(
-      title: 'Once Upon a Time in Hollywood',
+      title: 'Hollywood',
       logo: 'assets/images/ticket_booking/logo/hollywood.png',
       imageURL:'https://posterposse.com/wp-content/uploads/2019/07/Once-upon-a-time-in-hollywood-Poster-Posse-Hughes.png',
       age: 'R',

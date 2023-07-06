@@ -19,7 +19,7 @@ class DarkBorderlessButton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(20.0),
         decoration: BoxDecoration(color: Colors.black54, borderRadius: BorderRadius.circular(15.0)),
-        child: Text(text, style: kMainTextStyle),
+        child: Text(text, style: kMainTextStyle.copyWith(fontSize: 16)),
       ),
     );
   }

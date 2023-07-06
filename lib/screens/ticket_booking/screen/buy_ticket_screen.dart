@@ -18,6 +18,7 @@ class BuyTicketScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.only(top:15.0 , left:15.0),
@@ -162,8 +163,7 @@ class BuyTicketScreen extends StatelessWidget {
             ),
             Center(child: Image.asset(ImagesRoute.ticketScreen)),
             const CinemaSeatsView(),
-            Expanded(
-              child: Row(
+            Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Padding(
@@ -182,8 +182,7 @@ class BuyTicketScreen extends StatelessWidget {
                     child: const InkWell(child: Text('Pay' , style: TextStyle(color: Colors.white ,fontSize: 25.0 , fontWeight:FontWeight.bold))),
                   )
                 ],
-              ),
-            )
+            ),
           ],
         ),
       ),

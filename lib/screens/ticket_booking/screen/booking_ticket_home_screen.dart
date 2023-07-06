@@ -26,7 +26,6 @@ class _BookingTicketHomeScreenState extends State<BookingTicketHomeScreen> {
     final String backgroundImage = movies[widget.index].imageURL;
     final String age = movies[widget.index].age;
     final String rating = movies[widget.index].rating.toString();
-    final String year = movies[widget.index].date.year.toString();
     final String categories = movies[widget.index].categories;
     final String technology = movies[widget.index].technology;
     return Scaffold(
@@ -54,8 +53,10 @@ class _BookingTicketHomeScreenState extends State<BookingTicketHomeScreen> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                // Image.asset(ImagesRoute.icJoker),
-                Image.asset(movies[widget.index].logo),
+                Image.asset(
+                  movies[widget.index].logo,
+                  height: 48,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -71,17 +72,13 @@ class _BookingTicketHomeScreenState extends State<BookingTicketHomeScreen> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
+                  padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 16.0),
                   child: Wrap(
-                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    direction: Axis.vertical,
                     children: [
-                      Text(
-                        year,
-                        style: kSmallMainTextStyle,
-                      ),
-                      const Text('•', style: kPrimaryColorTextStyle),
                       Text(categories, style: kSmallMainTextStyle),
-                      const Text('•', style: kPrimaryColorTextStyle),
+                      const SizedBox(height: 8),
                       Text(technology, style: kSmallMainTextStyle),
                     ],
                   ),
