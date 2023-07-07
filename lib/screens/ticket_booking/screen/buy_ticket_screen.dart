@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:movies_4u/constants/image_routes.dart';
-import 'package:movies_4u/screens/ticket_booking/components/cinema_seats_view.dart';
-
+import '../../../constants/image_routes.dart';
 import '../components/calendar_day_w.dart';
+import '../components/cinema_seats_view.dart';
 import '../components/show_time_w.dart';
 import '../constant/constant.dart';
 
@@ -21,7 +20,7 @@ class BuyTicketScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top:15.0 , left:15.0),
+              padding: const EdgeInsets.only(top: 15.0, left: 15.0),
               child: Row(
                 children: <Widget>[
                   Container(
@@ -29,13 +28,13 @@ class BuyTicketScreen extends StatelessWidget {
                     height: MediaQuery.of(context).size.width * .12,
                     decoration: kRoundedFadedBorder,
                     child: IconButton(
-                        icon: const Icon(
-                          Icons.keyboard_arrow_left,
-                          size: 28.0,
-                        ),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
+                      icon: const Icon(
+                        Icons.keyboard_arrow_left,
+                        size: 28.0,
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                     ),
                   ),
                   SizedBox(
@@ -67,25 +66,25 @@ class BuyTicketScreen extends StatelessWidget {
                   child: Row(
                     children: const [
                       CalendarDay(
+                        dayNumber: '7',
+                        dayAbbreviation: 'Mon',
+                      ),
+                      CalendarDay(
+                        dayNumber: '8',
+                        dayAbbreviation: 'Tue',
+                      ),
+                      CalendarDay(
                         dayNumber: '9',
-                        dayAbbreviation: 'TH',
+                        dayAbbreviation: 'Wed',
                       ),
                       CalendarDay(
                         dayNumber: '10',
-                        dayAbbreviation: 'FR',
-                      ),
-                      CalendarDay(
-                        dayNumber: '11',
-                        dayAbbreviation: 'SA',
-                      ),
-                      CalendarDay(
-                        dayNumber: '12',
-                        dayAbbreviation: 'SU',
+                        dayAbbreviation: 'Thu',
                         isActive: true,
                       ),
                       CalendarDay(
-                        dayNumber: '13',
-                        dayAbbreviation: 'MO',
+                        dayNumber: '11',
+                        dayAbbreviation: 'Fri',
                       ),
                     ],
                   ),
@@ -97,27 +96,27 @@ class BuyTicketScreen extends StatelessWidget {
               child: Row(
                 children: const [
                   ShowTime(
-                    time: '11:00',
-                    price: 5,
+                    time: '19:00',
+                    price: 20,
                     isActive: false,
                   ),
                   ShowTime(
-                    time: '12:30',
-                    price: 10,
+                    time: '20:30',
+                    price: 20,
                     isActive: true,
                   ),
                   ShowTime(
-                    time: '12:30',
+                    time: '21:30',
+                    price: 20,
+                    isActive: false,
+                  ),
+                  ShowTime(
+                    time: '22:00',
                     price: 10,
                     isActive: false,
                   ),
                   ShowTime(
-                    time: '12:30',
-                    price: 10,
-                    isActive: false,
-                  ),
-                  ShowTime(
-                    time: '12:30',
+                    time: '22:30',
                     price: 10,
                     isActive: false,
                   ),
@@ -125,29 +124,41 @@ class BuyTicketScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
+                children: [
                   const Icon(
                     Icons.tv,
                     color: kPimaryColor,
                     size: 25.0,
                   ),
-                  const SizedBox(width: 20.0),
+                  const SizedBox(width: 12.0),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text('Star Cineplex Bangladesh', style: kMainTextStyle),
-                      const Text('panthapath , 1205 Dhaka, Bangladesh',
-                          style: TextStyle(color: Colors.white30, fontSize: 18.0)),
+                    children: [
+                      Text('Star Cineplex Viet Nam', style: kMainTextStyle),
+                      const SizedBox(height: 4.0),
+                      const Text('Times City , Ha Noi, Viet Nam',
+                          style: TextStyle(color: Colors.white30, fontSize: 12.0)),
                       const SizedBox(height: 10.0),
                       Row(
-                        children: <Widget>[
-                          Text('2D', style: kMainTextStyle),
+                        children: [
+                          const Text('2D',
+                              style: TextStyle(
+                                color: Colors.white30,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                              )),
                           const SizedBox(width: 10.0),
-                          const Text('3D',
-                              style: TextStyle(color: Colors.white30, fontSize: 18.0, fontWeight: FontWeight.bold)),
+                          Text('3D', style: kMainTextStyle),
+                          const SizedBox(width: 10.0),
+                          const Text('4DX',
+                              style: TextStyle(
+                                color: Colors.white30,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                              )),
                         ],
                       )
                     ],
@@ -164,24 +175,24 @@ class BuyTicketScreen extends StatelessWidget {
             Center(child: Image.asset(ImagesRoute.ticketScreen)),
             const CinemaSeatsView(),
             Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(left: 25.0),
-                    child: Text(
-                      '30\$',
-                      style: TextStyle(
-                          fontSize: 30.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: 25.0),
+                  child: Text(
+                    '30\$',
+                    style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold, color: Colors.white),
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 40.0 , vertical: 10.0),
-                    decoration: const BoxDecoration(color:  kActionColor , borderRadius: BorderRadius.only(topLeft: Radius.circular(25.0))),
-                    child: const InkWell(child: Text('Pay' , style: TextStyle(color: Colors.white ,fontSize: 25.0 , fontWeight:FontWeight.bold))),
-                  )
-                ],
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 10.0),
+                  decoration: const BoxDecoration(
+                      color: kActionColor, borderRadius: BorderRadius.only(topLeft: Radius.circular(25.0))),
+                  child: const InkWell(
+                      child: Text('Pay',
+                          style: TextStyle(color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold))),
+                )
+              ],
             ),
           ],
         ),

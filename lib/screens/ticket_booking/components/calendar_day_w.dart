@@ -24,14 +24,14 @@ class CalendarDay extends StatelessWidget {
         decoration: BoxDecoration(color: isActive ? kPimaryColor : null, borderRadius: BorderRadius.circular(15.0)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             Text(dayNumber,
                 style: TextStyle(
                     color: isActive ? kBackgroundColor : Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold)),
             Text(
-              dayAbbreviation.toUpperCase(),
+              dayAbbreviation,
               style: TextStyle(
-                color: isActive ? kBackgroundColor : Colors.white12,
+                color: isActive ? kBackgroundColor : Colors.white.withOpacity(0.4),
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               ),

@@ -13,7 +13,7 @@ class MovieStaticData {
   ];
 
   static const List<String> downloadMovieNames = [
-    'Lightyear',
+    'Light year',
     'Top Gun: Maverick',
     'Thor: Love & Thunder',
     'Stranger Things 4: Epi...',

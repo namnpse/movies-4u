@@ -65,9 +65,14 @@ class ProfileOptionItem extends StatelessWidget {
           ],
         ],
       ),
-      leading: SvgPicture.asset(
-        MovieStaticData.profileOptionsData[index][1],
-        color: MovieDynamicColorBuilder.getGrey900AndWhite(context),
+      leading: Padding(
+        padding: EdgeInsets.only(left: index < 3 ? 3 : 0, right: index < 3 ? 4 : 0),
+        child: SvgPicture.asset(
+          MovieStaticData.profileOptionsData[index][1],
+          color: MovieDynamicColorBuilder.getGrey900AndWhite(context),
+          fit: BoxFit.cover,
+          // width: 24,
+        ),
       ),
     );
   }
