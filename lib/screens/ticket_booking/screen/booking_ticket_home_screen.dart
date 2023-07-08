@@ -32,7 +32,7 @@ class _BookingTicketHomeScreenState extends State<BookingTicketHomeScreen> {
       resizeToAvoidBottomInset: false,
       body: Stack(
         fit: StackFit.expand,
-        children: <Widget>[
+        children: [
           BackgroundGradientImage(
             image: Image.network(
               backgroundImage,

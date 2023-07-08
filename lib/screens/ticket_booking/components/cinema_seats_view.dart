@@ -10,11 +10,11 @@ class CinemaSeatsView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(5.0),
       child: Column(
-        children: <Widget>[
+        children: [
           // First Seat Row
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+            children: [
               SizedBox(
                 width: (MediaQuery.of(context).size.width / 20),
               ),
@@ -34,7 +34,7 @@ class CinemaSeatsView extends StatelessWidget {
           // Second Row 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+            children: [
               CinemaSeat(),
               CinemaSeat(),
               CinemaSeat(),
@@ -50,7 +50,7 @@ class CinemaSeatsView extends StatelessWidget {
           // Third  Row 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+            children: [
               CinemaSeat(),
               CinemaSeat(),
               CinemaSeat(),
@@ -66,7 +66,7 @@ class CinemaSeatsView extends StatelessWidget {
           // 4TH Row 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+            children: [
               CinemaSeat(),
               CinemaSeat(),
               CinemaSeat(),
@@ -82,7 +82,7 @@ class CinemaSeatsView extends StatelessWidget {
           // 5TH Row 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+            children: [
               CinemaSeat(),
               CinemaSeat(),
               CinemaSeat(),
@@ -98,7 +98,7 @@ class CinemaSeatsView extends StatelessWidget {
           // 6TH Row 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+            children: [
               CinemaSeat(),
               CinemaSeat(),
               CinemaSeat(),
@@ -114,7 +114,7 @@ class CinemaSeatsView extends StatelessWidget {
           // final Row 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+            children: [
               SizedBox(
                 width: (MediaQuery.of(context).size.width / 20),
               ),

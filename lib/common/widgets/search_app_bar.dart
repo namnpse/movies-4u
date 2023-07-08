@@ -3,7 +3,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 import '../../constants/image_routes.dart';
-import '../../theme/color_builder.dart';
 import '../../theme/movie_theme.dart';
 import '../../theme/theme_notifier.dart';
 

@@ -14,7 +14,7 @@ class SearchBar extends StatelessWidget {
       height: 60.0,
       decoration: kRoundedFadedBorder,
       child: Row(
-        children: <Widget>[
+        children: [
           Expanded(
               child: TextField(
             style: const TextStyle(fontSize: 22, color: Colors.white),

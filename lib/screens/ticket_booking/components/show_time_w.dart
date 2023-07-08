@@ -25,7 +25,7 @@ class ShowTime extends StatelessWidget {
           border: Border.all(color: isActive ? kPimaryColor : Colors.white12),
           borderRadius: BorderRadius.circular(15.0)),
       child: Column(
-        children: <Widget>[
+        children: [
           Text(
             time,
             style:

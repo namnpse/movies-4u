@@ -18,11 +18,11 @@ class BuyTicketScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
+          children: [
             Padding(
               padding: const EdgeInsets.only(top: 15.0, left: 15.0),
               child: Row(
-                children: <Widget>[
+                children: [
                   Container(
                     width: MediaQuery.of(context).size.width * .12,
                     height: MediaQuery.of(context).size.width * .12,
